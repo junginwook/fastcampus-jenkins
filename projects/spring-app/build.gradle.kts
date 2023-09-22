@@ -7,7 +7,7 @@ plugins {
     id("org.jlleitschuh.gradle.ktlint") version "11.3.2"
     kotlin("jvm") version "1.6.21"
     kotlin("plugin.spring") version "1.6.21"
-    // jacoco
+    jacoco
 }
 
 group = "com.fastcampus"
@@ -37,8 +37,8 @@ tasks.withType<Test> {
     useJUnitPlatform()
 }
 
-// configure<org.jlleitschuh.gradle.ktlint.KtlintExtension> {
-//    reporters {
-//        reporter(ReporterType.CHECKSTYLE)
-//    }
-// }
+ configure<org.jlleitschuh.gradle.ktlint.KtlintExtension> {
+    reporters {
+        reporter(ReporterType.CHECKSTYLE)
+    }
+ }
